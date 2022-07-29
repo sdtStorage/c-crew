@@ -30,13 +30,13 @@ public class APIController {
      * @throws Exception
      */
     @PostMapping(value = "/list/userinfo")
-    public @ResponseBody List<UserDTO> getList(@RequestBody UserDTO userdto) throws Exception {
+    public @ResponseBody List<UserDTO> getList(@RequestBody String userName) throws Exception {
     	
     	log.debug("**************************");
-    	log.debug(userdto.toString());
+    	log.debug(userName);
     	log.debug("**************************");
     	
-    	List<UserDTO> list = service.getUserList(userdto);
+    	List<UserDTO> list = service.getUserList(userName);
     	
     	return list;
     }

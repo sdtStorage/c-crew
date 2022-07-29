@@ -40,13 +40,13 @@ public class APIServiceImpl implements IAPIService {
 
    /**
     * @brief 사용자정보조회
-    * @param UserDTO
+    * @param String
     * @return List<UserDTO>
     * @throws Exception
     */   
-    public List<UserDTO> getUserList(UserDTO user) throws Exception{
+    public List<UserDTO> getUserList(String userName) throws Exception{
         
-    	List<UserDTO> list= dao.selectUsers(user);
+    	List<UserDTO> list= dao.selectUsers(userName);
         
     	log.debug(list.toString());
     	

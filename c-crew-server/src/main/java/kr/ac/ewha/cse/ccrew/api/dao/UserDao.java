@@ -13,6 +13,6 @@ import kr.ac.ewha.cse.ccrew.api.dto.UserDTO;
 @Mapper
 public interface UserDao {
 
-	List<UserDTO> selectUsers(UserDTO param) throws Exception;
+	List<UserDTO> selectUsers(String userName) throws Exception;
 	
 }
