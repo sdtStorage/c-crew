@@ -9,6 +9,6 @@
 	  SCORE as score
     FROM USER_INFO
     WHERE USER_NAME LIKE CONCAT(#{userName}, '%')
-    ORDER BY SCORE
+    ORDER BY SCORE DESC
   </select>
 </mapper>
