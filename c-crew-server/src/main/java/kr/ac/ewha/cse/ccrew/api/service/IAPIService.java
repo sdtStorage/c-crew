@@ -12,10 +12,10 @@ public interface IAPIService {
 
    /**
     * @brief 사용자정보조회
-    * @param String
+    * @param UserDTO
     * @return List<UserDTO>
     * @throws Exception
     */       
-    public List<UserDTO> getUserList(String username) throws Exception;
+    public List<UserDTO> getUserList(UserDTO user) throws Exception;
  
 }

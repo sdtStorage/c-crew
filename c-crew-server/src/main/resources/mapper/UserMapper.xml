@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ac.ewha.cse.ccrew.api.dao.UserDao">
-  <select id="selectUsers" parameterType="String"
+  <select id="selectUsers" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO"
       resultType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO">
   	SELECT 	
 	  USER_NO as userNo,
 	  USER_NAME as userName,
 	  SCORE as score
     FROM USER_INFO
-    WHERE USER_NAME LIKE CONCAT(#{userName}, '%')
+    WHERE 1=1
+       <if test='userName != null and userName != "" '> 
+           AND USER_NAME LIKE CONCAT(#{userName}, '%')
+        </if>
     ORDER BY SCORE DESC
   </select>
 </mapper>
