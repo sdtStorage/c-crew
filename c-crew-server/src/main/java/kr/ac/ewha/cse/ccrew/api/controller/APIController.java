@@ -19,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class APIController {
 	
+	
     @Autowired
     private IAPIService service;
 
@@ -31,7 +32,9 @@ public class APIController {
     @PostMapping(value = "/list/userinfo")
     public @ResponseBody List<UserDTO> getList(@RequestBody UserDTO userdto) throws Exception {
     	
+    	log.debug("**************************");
     	log.debug(userdto.toString());
+    	log.debug("**************************");
     	
     	List<UserDTO> list = service.getUserList(userdto);
     	
