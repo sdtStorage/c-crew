@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="300 seconds">
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+ 	<property name="LOG_DIR" value="/logs" />
+    <property name="WEB_LOG_PATH_NAME" value="${LOG_DIR}/c-crew-server.log" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>[%d{HH:mm:ss.SSS}] %class [%mdc] [%-5level] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="WEBFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${WEB_LOG_PATH_NAME}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${WEB_LOG_PATH_NAME}.%d{yyyyMMdd}</fileNamePattern>
+			 <maxHistory>30</maxHistory> <!-- 일자별 백업파일의 보관기간 -->
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset> 
+			<pattern>[%d][%-5p](%F>%M:%L) - %m%n</pattern>
+		</encoder>
+	</appender>	
+
+    <!-- TRACE > DEBUG > INFO > WARN > ERROR, 대소문자 구분 안함 -->
+    <logger name="org.springframework.boot.autoconfigure" level="warn" />
+		
+    <root level="debug">
+      <appender-ref ref="STDOUT" />
+      <appender-ref ref="WEBFILE" />
+    </root>
+      
+</configuration>
