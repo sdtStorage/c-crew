@@ -4,14 +4,33 @@
   <select id="selectUsers" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO"
       resultType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO">
   	SELECT 	
-	  USER_NO as userNo,
-	  USER_NAME as userName,
+	  USER_ID as userId,
 	  SCORE as score
     FROM USER_INFO
-    WHERE 1=1
-       <if test='userName != null and userName != "" '> 
-           AND USER_NAME LIKE CONCAT(#{userName}, '%')
-        </if>
     ORDER BY SCORE DESC
   </select>
+  <select id="getUsers" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO"
+      resultType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO">
+  	SELECT 	
+	  USER_ID as userId
+    FROM USER_INFO
+    WHERE USER_ID =#{userId}
+  </select>
+  <insert id="insertUsers" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO">
+		INSERT INTO USER_INFO
+	    (
+			 USER_ID, SCORE
+	    )
+	    VALUES
+	    (
+	    	 #{userId}
+			,#{score}        
+	    ) 
+    </insert>	
+  <update id="updateUser" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO">
+      
+        UPDATE USER_INFO
+           SET SCORE= SCORE+ #{score}    
+         WHERE USER_ID=#{userId}
+    </update>     
 </mapper>

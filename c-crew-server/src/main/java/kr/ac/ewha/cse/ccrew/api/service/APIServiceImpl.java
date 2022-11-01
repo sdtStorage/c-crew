@@ -53,4 +53,18 @@ public class APIServiceImpl implements IAPIService {
         return list;
     }
 
+    public UserDTO regScore(UserDTO user) throws Exception{
+         
+     	UserDTO dto= dao.getUsers(user);
+        
+     	if(dto==null)
+     	{
+     		dao.insertUsers(user);
+     	}
+     	else
+     	{
+     		dao.updateUser(user);
+     	}
+         return user;
+     }
 }

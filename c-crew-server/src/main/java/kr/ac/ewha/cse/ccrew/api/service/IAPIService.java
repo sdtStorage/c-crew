@@ -18,4 +18,7 @@ public interface IAPIService {
     */       
     public List<UserDTO> getUserList(UserDTO user) throws Exception;
  
+
+    public UserDTO regScore(UserDTO user) throws Exception;
+
 }

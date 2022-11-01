@@ -15,4 +15,9 @@ public interface UserDao {
 
 	List<UserDTO> selectUsers(UserDTO param) throws Exception;
 	
+	UserDTO getUsers(UserDTO param) throws Exception;
+	
+	void insertUsers(UserDTO param) throws Exception;
+	
+	void updateUser(UserDTO param) throws Exception;
 }

@@ -9,8 +9,7 @@ import lombok.ToString;
 @ToString
 public class UserDTO {
 	
-	private String userNo;
-	private String userName;
+	private String userId;
 	private int score;
 
 }

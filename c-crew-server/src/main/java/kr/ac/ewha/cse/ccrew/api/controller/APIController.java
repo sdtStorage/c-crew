@@ -40,6 +40,20 @@ public class APIController {
     	
     	return list;
     }
+    
+    
+    
+    @PostMapping(value = "/score/userinfo")
+    public @ResponseBody UserDTO regScore(@RequestBody UserDTO userdto) throws Exception {
+    	
+    	log.debug("**************************");
+    	log.debug(userdto.toString());
+    	log.debug("**************************");
+    	
+    	UserDTO dto = service.regScore(userdto);
+    	
+    	return dto;
+    }
 }
 
 
