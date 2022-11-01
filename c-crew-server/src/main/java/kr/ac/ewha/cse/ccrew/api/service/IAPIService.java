@@ -21,4 +21,7 @@ public interface IAPIService {
 
     public UserDTO regScore(UserDTO user) throws Exception;
 
+    public UserDTO deleteUser() throws Exception;
+
+    
 }

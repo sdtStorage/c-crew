@@ -67,4 +67,13 @@ public class APIServiceImpl implements IAPIService {
      	}
          return user;
      }
+    
+    public UserDTO deleteUser() throws Exception{
+    	
+    	
+    	dao.deleteUser(new UserDTO());
+    	
+    	return new UserDTO();
+    	
+    }
 }

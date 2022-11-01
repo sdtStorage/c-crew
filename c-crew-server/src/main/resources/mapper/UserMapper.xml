@@ -32,5 +32,10 @@
         UPDATE USER_INFO
            SET SCORE= SCORE+ #{score}    
          WHERE USER_ID=#{userId}
-    </update>     
+    </update>
+    
+  <delete id="deleteUser" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO">
+        DELETE USER_INFO
+    </delete>
+         
 </mapper>

@@ -54,6 +54,15 @@ public class APIController {
     	
     	return dto;
     }
+    
+    @PostMapping(value = "/delete/userinfo")
+    public @ResponseBody UserDTO deleteUser() throws Exception {
+    	
+    	
+    	UserDTO dto = service.deleteUser();
+    	
+    	return dto;
+    }    
 }
 
 

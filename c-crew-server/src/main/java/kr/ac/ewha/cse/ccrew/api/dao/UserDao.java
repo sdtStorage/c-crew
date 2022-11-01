@@ -20,4 +20,6 @@ public interface UserDao {
 	void insertUsers(UserDTO param) throws Exception;
 	
 	void updateUser(UserDTO param) throws Exception;
+	
+	void deleteUser(UserDTO param) throws Exception;
 }
