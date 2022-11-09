@@ -7,6 +7,9 @@
 	  USER_ID as userId,
 	  SCORE as score
     FROM USER_INFO
+	<if test="!userId.equals('') and userId!=null">
+		WHERE USER_ID = #{userId}
+	</if>    
     ORDER BY SCORE DESC
   </select>
   <select id="getUsers" parameterType="kr.ac.ewha.cse.ccrew.api.dto.UserDTO"

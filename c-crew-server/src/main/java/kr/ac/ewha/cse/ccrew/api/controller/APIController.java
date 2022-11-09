@@ -1,9 +1,10 @@
 package kr.ac.ewha.cse.ccrew.api.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,15 +31,16 @@ public class APIController {
      * @throws Exception
      */
     @PostMapping(value = "/list/userinfo")
-    public @ResponseBody List<UserDTO> getList(@RequestBody UserDTO userdto) throws Exception {
+    public @ResponseBody Map getList(@RequestBody UserDTO userdto) throws Exception {
     	
     	log.debug("**************************");
     	log.debug(userdto.toString());
-    	log.debug("**************************");
+    	log.debug("***********m***************");
     	
     	List<UserDTO> list = service.getUserList(userdto);
-    	
-    	return list;
+    	Map map = new HashMap();
+    	map.put("ranking", list);
+    	return map;
     }
     
     
