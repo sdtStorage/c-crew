@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 - 신한자산신탁</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="../images/ci-1.png" alt="신한자산신탁">
+                    <span>신한자산신탁</span>
+                </div>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fas fa-user"></i></div>
+                    <div><div class="user-name">홍길동 님</div><div class="user-role">위탁사 관리자</div></div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section"><div class="nav-section-title">메인</div><div class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i><span>대시보드</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">사업관리</div><div class="nav-item"><a href="dashboard-business.html" class="nav-link"><i class="fas fa-chart-pie"></i><span>사업수지 현황</span></a></div><div class="nav-item"><a href="dashboard-progress.html" class="nav-link"><i class="fas fa-tasks"></i><span>사업현황 (공정률)</span></a></div><div class="nav-item"><a href="restricted-rights.html" class="nav-link"><i class="fas fa-lock"></i><span>제한권리현황</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">자금관리</div><div class="nav-item"><a href="transfer-request.html" class="nav-link"><i class="fas fa-paper-plane"></i><span>자금이체 신청</span></a></div><div class="nav-item"><a href="transfer-history.html" class="nav-link"><i class="fas fa-history"></i><span>자금이체 이력</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">서류관리</div><div class="nav-item"><a href="land-consent.html" class="nav-link"><i class="fas fa-file-signature"></i><span>토지사용승낙서</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">수분양자</div><div class="nav-item"><a href="payment-history.html" class="nav-link"><i class="fas fa-receipt"></i><span>분양금 납입내역</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">기타</div><div class="nav-item"><a href="notice.html" class="nav-link active"><i class="fas fa-bullhorn"></i><span>공지사항</span><span class="nav-badge">3</span></a></div></div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">공지사항</h1>
+                    <div class="breadcrumb"><a href="../index.html">홈</a><i class="fas fa-chevron-right"></i><span>공지사항</span></div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn"><i class="fas fa-bell"></i><span class="badge">5</span></button>
+                    <button class="header-btn"><i class="fas fa-cog"></i></button>
+                    <button class="header-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-bullhorn"></i> 공지사항 (총 45건)</h3>
+                        <div class="d-flex gap-10">
+                            <input type="text" class="form-control" placeholder="검색어 입력" style="width: 200px;">
+                            <button class="btn btn-primary btn-sm"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 60px;">번호</th>
+                                    <th style="width: 80px;">구분</th>
+                                    <th>제목</th>
+                                    <th style="width: 100px;">작성자</th>
+                                    <th style="width: 100px;">작성일</th>
+                                    <th style="width: 80px;">조회</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="notice-important">
+                                    <td><span class="badge-notice">공지</span></td>
+                                    <td><span class="status status-danger">필독</span></td>
+                                    <td><a href="#" class="notice-link">2024년 1분기 정기점검 안내 (1/20 00:00 ~ 06:00)</a></td>
+                                    <td>시스템관리자</td>
+                                    <td>2024.01.15</td>
+                                    <td>324</td>
+                                </tr>
+                                <tr class="notice-important">
+                                    <td><span class="badge-notice">공지</span></td>
+                                    <td><span class="status status-info">안내</span></td>
+                                    <td><a href="#" class="notice-link">비대면 업무시스템 이용약관 개정 안내</a></td>
+                                    <td>법무팀</td>
+                                    <td>2024.01.10</td>
+                                    <td>256</td>
+                                </tr>
+                                <tr>
+                                    <td>43</td>
+                                    <td><span class="status status-info">안내</span></td>
+                                    <td><a href="#" class="notice-link">신규 기능 업데이트 안내 - AI 챗봇 도입</a></td>
+                                    <td>IT기획팀</td>
+                                    <td>2024.01.05</td>
+                                    <td>189</td>
+                                </tr>
+                                <tr>
+                                    <td>42</td>
+                                    <td><span class="status status-success">완료</span></td>
+                                    <td><a href="#" class="notice-link">2023년 연말정산 서류 제출 안내</a></td>
+                                    <td>인사팀</td>
+                                    <td>2023.12.28</td>
+                                    <td>412</td>
+                                </tr>
+                                <tr>
+                                    <td>41</td>
+                                    <td><span class="status status-info">안내</span></td>
+                                    <td><a href="#" class="notice-link">2024년 공휴일 및 휴무일 안내</a></td>
+                                    <td>총무팀</td>
+                                    <td>2023.12.20</td>
+                                    <td>523</td>
+                                </tr>
+                                <tr>
+                                    <td>40</td>
+                                    <td><span class="status status-warning">변경</span></td>
+                                    <td><a href="#" class="notice-link">자금이체 신청 프로세스 변경 안내</a></td>
+                                    <td>신탁운영팀</td>
+                                    <td>2023.12.15</td>
+                                    <td>287</td>
+                                </tr>
+                                <tr>
+                                    <td>39</td>
+                                    <td><span class="status status-info">안내</span></td>
+                                    <td><a href="#" class="notice-link">모바일 앱 업데이트 안내 (v2.1.0)</a></td>
+                                    <td>IT기획팀</td>
+                                    <td>2023.12.10</td>
+                                    <td>145</td>
+                                </tr>
+                                <tr>
+                                    <td>38</td>
+                                    <td><span class="status status-info">안내</span></td>
+                                    <td><a href="#" class="notice-link">개인정보처리방침 개정 안내</a></td>
+                                    <td>법무팀</td>
+                                    <td>2023.12.01</td>
+                                    <td>198</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <div class="pagination">
+                            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">4</button>
+                            <button class="page-btn">5</button>
+                            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer"><p>© 2024 신한자산신탁 주식회사. All rights reserved.</p></footer>
+        </main>
+    </div>
+    <style>
+        .notice-important { background: #fffbeb; }
+        .badge-notice { background: var(--primary); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .notice-link { color: var(--gray-800); font-weight: 500; }
+        .notice-link:hover { color: var(--primary); text-decoration: underline; }
+        .pagination { display: flex; justify-content: center; gap: 5px; }
+        .page-btn { width: 36px; height: 36px; border: 1px solid var(--gray-300); background: #fff; border-radius: 6px; cursor: pointer; }
+        .page-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .page-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    </style>
+</body>
+</html>

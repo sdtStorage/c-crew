@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자금이체 신청 - 신한자산신탁</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="../images/ci-1.png" alt="신한자산신탁">
+                    <span>신한자산신탁</span>
+                </div>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="user-name">홍길동 님</div>
+                        <div class="user-role">위탁사 관리자</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">메인</div>
+                    <div class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>대시보드</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">사업관리</div>
+                    <div class="nav-item">
+                        <a href="dashboard-business.html" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>사업수지 현황</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="dashboard-progress.html" class="nav-link">
+                            <i class="fas fa-tasks"></i>
+                            <span>사업현황 (공정률)</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="restricted-rights.html" class="nav-link">
+                            <i class="fas fa-lock"></i>
+                            <span>제한권리현황</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">자금관리</div>
+                    <div class="nav-item">
+                        <a href="transfer-request.html" class="nav-link active">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>자금이체 신청</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="transfer-history.html" class="nav-link">
+                            <i class="fas fa-history"></i>
+                            <span>자금이체 이력</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">서류관리</div>
+                    <div class="nav-item">
+                        <a href="land-consent.html" class="nav-link">
+                            <i class="fas fa-file-signature"></i>
+                            <span>토지사용승낙서</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">수분양자</div>
+                    <div class="nav-item">
+                        <a href="payment-history.html" class="nav-link">
+                            <i class="fas fa-receipt"></i>
+                            <span>분양금 납입내역</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">기타</div>
+                    <div class="nav-item">
+                        <a href="notice.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>공지사항</span>
+                            <span class="nav-badge">3</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">자금이체 신청</h1>
+                    <div class="breadcrumb">
+                        <a href="../index.html">홈</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>자금이체 신청</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn"><i class="fas fa-bell"></i><span class="badge">5</span></button>
+                    <button class="header-btn"><i class="fas fa-cog"></i></button>
+                    <button class="header-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- 잔액 정보 -->
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-value">5,230,000,000</div>
+                        <div class="stat-label">신탁계좌 잔액</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-value">1,250,000,000</div>
+                        <div class="stat-label">승인대기 금액</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-value">3,980,000,000</div>
+                        <div class="stat-label">가용 잔액</div>
+                    </div>
+                </div>
+
+                <!-- 이체 신청 폼 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-paper-plane"></i>
+                            자금이체 신청서 작성
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="transferForm">
+                            <div class="row">
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">사업 선택</label>
+                                        <select class="form-control form-select" required>
+                                            <option value="">사업을 선택하세요</option>
+                                            <option value="1">강남 오피스텔 신축</option>
+                                            <option value="2">판교 지식산업센터</option>
+                                            <option value="3">송도 주상복합</option>
+                                            <option value="4">일산 상업시설</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">이체 구분</label>
+                                        <select class="form-control form-select" required>
+                                            <option value="">이체 구분을 선택하세요</option>
+                                            <option value="construction">공사비</option>
+                                            <option value="design">설계비</option>
+                                            <option value="permit">인허가비</option>
+                                            <option value="tax">세금/부담금</option>
+                                            <option value="commission">수수료</option>
+                                            <option value="other">기타</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">수취인명</label>
+                                        <input type="text" class="form-control" placeholder="수취인명을 입력하세요" required>
+                                    </div>
+                                </div>
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">사업자등록번호</label>
+                                        <input type="text" class="form-control" placeholder="000-00-00000" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">수취은행</label>
+                                        <select class="form-control form-select" required>
+                                            <option value="">은행을 선택하세요</option>
+                                            <option value="shinhan">신한은행</option>
+                                            <option value="kb">국민은행</option>
+                                            <option value="woori">우리은행</option>
+                                            <option value="hana">하나은행</option>
+                                            <option value="nh">농협은행</option>
+                                            <option value="ibk">기업은행</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">계좌번호</label>
+                                        <input type="text" class="form-control" placeholder="계좌번호를 입력하세요 (- 없이)" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">이체금액</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="transferAmount" placeholder="0" required>
+                                            <span class="input-suffix">원</span>
+                                        </div>
+                                        <p class="form-text" id="amountText">금액을 입력하세요</p>
+                                    </div>
+                                </div>
+                                <div class="col col-6">
+                                    <div class="form-group">
+                                        <label class="form-label required">이체 희망일</label>
+                                        <input type="date" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">이체 사유</label>
+                                <textarea class="form-control" rows="3" placeholder="이체 사유를 입력하세요 (선택)"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">첨부파일</label>
+                                <div class="file-upload-area" id="fileUploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>파일을 드래그하거나 클릭하여 업로드</p>
+                                    <span>세금계산서, 기성검사확인서 등</span>
+                                    <input type="file" id="fileInput" multiple hidden>
+                                </div>
+                                <div class="file-list" id="fileList"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-between align-center">
+                            <button type="button" class="btn btn-secondary" onclick="history.back()">
+                                <i class="fas fa-arrow-left"></i> 취소
+                            </button>
+                            <div class="d-flex gap-10">
+                                <button type="button" class="btn btn-outline" onclick="saveDraft()">
+                                    <i class="fas fa-save"></i> 임시저장
+                                </button>
+                                <button type="submit" class="btn btn-primary" onclick="submitTransfer(event)">
+                                    <i class="fas fa-paper-plane"></i> 이체 신청
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>© 2024 신한자산신탁 주식회사. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <style>
+        .input-group {
+            position: relative;
+        }
+
+        .input-suffix {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-500);
+        }
+
+        .input-group .form-control {
+            padding-right: 40px;
+        }
+
+        .file-upload-area {
+            border: 2px dashed var(--gray-300);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .file-upload-area:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .file-upload-area i {
+            font-size: 48px;
+            color: var(--gray-400);
+            margin-bottom: 16px;
+        }
+
+        .file-upload-area p {
+            font-size: 16px;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+        }
+
+        .file-upload-area span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .file-list {
+            margin-top: 16px;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--gray-100);
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .file-item-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .file-item i {
+            color: var(--primary);
+        }
+
+        .file-item-remove {
+            color: var(--gray-500);
+            cursor: pointer;
+        }
+
+        .file-item-remove:hover {
+            color: var(--danger);
+        }
+    </style>
+
+    <script>
+        // 금액 포맷팅
+        document.getElementById('transferAmount').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/[^0-9]/g, '');
+            if (value) {
+                e.target.value = Number(value).toLocaleString();
+                document.getElementById('amountText').textContent = numberToKorean(Number(value)) + '원';
+            } else {
+                document.getElementById('amountText').textContent = '금액을 입력하세요';
+            }
+        });
+
+        // 숫자를 한글로 변환
+        function numberToKorean(num) {
+            const units = ['', '만', '억', '조'];
+            const nums = ['영', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+
+            if (num === 0) return '영';
+
+            let result = '';
+            let unitIndex = 0;
+
+            while (num > 0) {
+                const part = num % 10000;
+                if (part > 0) {
+                    result = part.toLocaleString() + units[unitIndex] + ' ' + result;
+                }
+                num = Math.floor(num / 10000);
+                unitIndex++;
+            }
+
+            return result.trim();
+        }
+
+        // 파일 업로드
+        const fileUploadArea = document.getElementById('fileUploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+
+        fileUploadArea.addEventListener('click', () => fileInput.click());
+        fileUploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileUploadArea.style.borderColor = 'var(--primary)';
+        });
+        fileUploadArea.addEventListener('dragleave', () => {
+            fileUploadArea.style.borderColor = 'var(--gray-300)';
+        });
+        fileUploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            handleFiles(e.dataTransfer.files);
+        });
+        fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                const item = document.createElement('div');
+                item.className = 'file-item';
+                item.innerHTML = `
+                    <div class="file-item-info">
+                        <i class="fas fa-file"></i>
+                        <span>${file.name}</span>
+                        <small class="text-muted">(${(file.size / 1024).toFixed(1)} KB)</small>
+                    </div>
+                    <span class="file-item-remove" onclick="this.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </span>
+                `;
+                fileList.appendChild(item);
+            });
+        }
+
+        // 임시저장
+        function saveDraft() {
+            alert('임시저장 되었습니다.');
+        }
+
+        // 이체 신청
+        function submitTransfer(e) {
+            e.preventDefault();
+            if (confirm('자금이체를 신청하시겠습니까?')) {
+                alert('이체 신청이 완료되었습니다.\n승인 후 이체가 진행됩니다.');
+                window.location.href = 'transfer-history.html';
+            }
+        }
+    </script>
+</body>
+</html>

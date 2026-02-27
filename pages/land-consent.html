@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토지사용승낙서 - 신한자산신탁</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><div class="sidebar-logo"><img src="../images/ci-1.png" alt="신한자산신탁"><span>신한자산신탁</span></div></div>
+            <div class="sidebar-user"><div class="user-info"><div class="user-avatar"><i class="fas fa-user"></i></div><div><div class="user-name">홍길동 님</div><div class="user-role">위탁사 관리자</div></div></div></div>
+            <nav class="sidebar-nav">
+                <div class="nav-section"><div class="nav-section-title">메인</div><div class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i><span>대시보드</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">사업관리</div><div class="nav-item"><a href="dashboard-business.html" class="nav-link"><i class="fas fa-chart-pie"></i><span>사업수지 현황</span></a></div><div class="nav-item"><a href="dashboard-progress.html" class="nav-link"><i class="fas fa-tasks"></i><span>사업현황 (공정률)</span></a></div><div class="nav-item"><a href="restricted-rights.html" class="nav-link"><i class="fas fa-lock"></i><span>제한권리현황</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">자금관리</div><div class="nav-item"><a href="transfer-request.html" class="nav-link"><i class="fas fa-paper-plane"></i><span>자금이체 신청</span></a></div><div class="nav-item"><a href="transfer-history.html" class="nav-link"><i class="fas fa-history"></i><span>자금이체 이력</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">서류관리</div><div class="nav-item"><a href="land-consent.html" class="nav-link active"><i class="fas fa-file-signature"></i><span>토지사용승낙서</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">수분양자</div><div class="nav-item"><a href="payment-history.html" class="nav-link"><i class="fas fa-receipt"></i><span>분양금 납입내역</span></a></div></div>
+                <div class="nav-section"><div class="nav-section-title">기타</div><div class="nav-item"><a href="notice.html" class="nav-link"><i class="fas fa-bullhorn"></i><span>공지사항</span></a></div></div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">토지사용승낙서 작성</h1>
+                    <div class="breadcrumb"><a href="../index.html">홈</a><i class="fas fa-chevron-right"></i><span>토지사용승낙서</span></div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn"><i class="fas fa-bell"></i><span class="badge">5</span></button>
+                    <button class="header-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-file-signature"></i> 토지사용승낙서</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="document-form">
+                            <h2 class="document-title">토 지 사 용 승 낙 서</h2>
+
+                            <div class="form-section">
+                                <h4 class="section-title">1. 토지의 표시</h4>
+                                <div class="row">
+                                    <div class="col col-6">
+                                        <div class="form-group">
+                                            <label class="form-label required">소재지</label>
+                                            <input type="text" class="form-control" placeholder="예: 서울특별시 강남구 역삼동 123-45">
+                                        </div>
+                                    </div>
+                                    <div class="col col-3">
+                                        <div class="form-group">
+                                            <label class="form-label required">지목</label>
+                                            <select class="form-control form-select">
+                                                <option value="">선택</option>
+                                                <option>대</option>
+                                                <option>전</option>
+                                                <option>답</option>
+                                                <option>임야</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col col-3">
+                                        <div class="form-group">
+                                            <label class="form-label required">면적</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="0">
+                                                <span class="input-suffix">㎡</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4 class="section-title">2. 사용목적</h4>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="2" placeholder="예: 건축물 신축을 위한 진입로 사용"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4 class="section-title">3. 사용기간</h4>
+                                <div class="row">
+                                    <div class="col col-6">
+                                        <div class="form-group">
+                                            <label class="form-label">시작일</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col col-6">
+                                        <div class="form-group">
+                                            <label class="form-label">종료일</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4 class="section-title">4. 승낙 내용</h4>
+                                <div class="consent-text">
+                                    <p>본인은 상기 토지에 대하여 위 목적으로 사용하는 것을 승낙하며, 사용기간 동안 토지 사용에 대한 어떠한 이의도 제기하지 않을 것을 확약합니다.</p>
+                                    <p>또한, 건축허가 등 인허가 신청 시 본 승낙서를 제출하는 것에 동의합니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4 class="section-title">5. 토지소유자 정보</h4>
+                                <div class="row">
+                                    <div class="col col-6">
+                                        <div class="form-group">
+                                            <label class="form-label required">성명(법인명)</label>
+                                            <input type="text" class="form-control" value="신한자산신탁 주식회사" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col col-6">
+                                        <div class="form-group">
+                                            <label class="form-label required">생년월일(사업자번호)</label>
+                                            <input type="text" class="form-control" value="110111-0012345" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label required">주소</label>
+                                    <input type="text" class="form-control" value="서울특별시 중구 세종대로 9길 20" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4 class="section-title">6. 전자서명</h4>
+                                <p class="form-text mb-10">아래 영역에 서명해 주세요.</p>
+                                <div class="signature-area">
+                                    <canvas id="signature-pad"></canvas>
+                                    <button type="button" class="btn-clear" onclick="clearSignature()"><i class="fas fa-eraser"></i> 지우기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-between">
+                            <button class="btn btn-secondary" onclick="history.back()"><i class="fas fa-arrow-left"></i> 취소</button>
+                            <div class="d-flex gap-10">
+                                <button class="btn btn-outline"><i class="fas fa-eye"></i> 미리보기</button>
+                                <button class="btn btn-primary" onclick="submitDocument()"><i class="fas fa-paper-plane"></i> 제출</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer"><p>© 2024 신한자산신탁 주식회사. All rights reserved.</p></footer>
+        </main>
+    </div>
+    <style>
+        .document-form { max-width: 800px; margin: 0 auto; }
+        .document-title { text-align: center; font-size: 24px; margin-bottom: 40px; letter-spacing: 10px; }
+        .form-section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--gray-200); }
+        .section-title { font-size: 16px; color: var(--primary); margin-bottom: 16px; }
+        .consent-text { background: var(--gray-100); padding: 20px; border-radius: 8px; line-height: 1.8; }
+        .consent-text p { margin-bottom: 10px; }
+        .signature-area { position: relative; border: 2px dashed var(--gray-300); border-radius: 8px; height: 200px; }
+        #signature-pad { width: 100%; height: 100%; }
+        .btn-clear { position: absolute; top: 10px; right: 10px; background: var(--gray-200); border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+        .input-group { position: relative; }
+        .input-suffix { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-500); }
+    </style>
+    <script>
+        let signaturePad;
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('signature-pad');
+            signaturePad = new SignaturePad(canvas, { backgroundColor: 'rgb(255,255,255)', penColor: 'rgb(0,0,0)' });
+            function resizeCanvas() {
+                const ratio = Math.max(window.devicePixelRatio || 1, 1);
+                canvas.width = canvas.offsetWidth * ratio;
+                canvas.height = canvas.offsetHeight * ratio;
+                canvas.getContext('2d').scale(ratio, ratio);
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+        });
+        function clearSignature() { signaturePad.clear(); }
+        function submitDocument() {
+            if (signaturePad.isEmpty()) { alert('서명을 입력해 주세요.'); return; }
+            if (confirm('토지사용승낙서를 제출하시겠습니까?')) { alert('제출이 완료되었습니다.'); }
+        }
+    </script>
+</body>
+</html>

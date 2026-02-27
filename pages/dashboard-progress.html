@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업현황 (공정률) - 신한자산신탁</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="../images/ci-1.png" alt="신한자산신탁">
+                    <span>신한자산신탁</span>
+                </div>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="user-name">홍길동 님</div>
+                        <div class="user-role">위탁사 관리자</div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">메인</div>
+                    <div class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i><span>대시보드</span></a></div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">사업관리</div>
+                    <div class="nav-item"><a href="dashboard-business.html" class="nav-link"><i class="fas fa-chart-pie"></i><span>사업수지 현황</span></a></div>
+                    <div class="nav-item"><a href="dashboard-progress.html" class="nav-link active"><i class="fas fa-tasks"></i><span>사업현황 (공정률)</span></a></div>
+                    <div class="nav-item"><a href="restricted-rights.html" class="nav-link"><i class="fas fa-lock"></i><span>제한권리현황</span></a></div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">자금관리</div>
+                    <div class="nav-item"><a href="transfer-request.html" class="nav-link"><i class="fas fa-paper-plane"></i><span>자금이체 신청</span></a></div>
+                    <div class="nav-item"><a href="transfer-history.html" class="nav-link"><i class="fas fa-history"></i><span>자금이체 이력</span></a></div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">서류관리</div>
+                    <div class="nav-item"><a href="land-consent.html" class="nav-link"><i class="fas fa-file-signature"></i><span>토지사용승낙서</span></a></div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">수분양자</div>
+                    <div class="nav-item"><a href="payment-history.html" class="nav-link"><i class="fas fa-receipt"></i><span>분양금 납입내역</span></a></div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">기타</div>
+                    <div class="nav-item"><a href="notice.html" class="nav-link"><i class="fas fa-bullhorn"></i><span>공지사항</span><span class="nav-badge">3</span></a></div>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">사업현황 (공정률)</h1>
+                    <div class="breadcrumb">
+                        <a href="../index.html">홈</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>사업현황</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn"><i class="fas fa-bell"></i><span class="badge">5</span></button>
+                    <button class="header-btn"><i class="fas fa-cog"></i></button>
+                    <button class="header-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- 전체 현황 요약 -->
+                <div class="stats-grid">
+                    <div class="stat-card primary">
+                        <div class="stat-icon"><i class="fas fa-building"></i></div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">전체 사업</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">완료</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-icon"><i class="fas fa-spinner"></i></div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">진행중</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-hourglass-start"></i></div>
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">착공예정</div>
+                    </div>
+                </div>
+
+                <!-- 사업별 공정률 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-tasks"></i> 사업별 공정 현황</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-grid">
+                            <!-- 프로젝트 카드 1 -->
+                            <div class="project-card">
+                                <div class="project-card-header">
+                                    <div class="project-status-badge progress">진행중</div>
+                                    <span class="project-date">착공: 2023.03.15</span>
+                                </div>
+                                <h4 class="project-name">강남 오피스텔 신축</h4>
+                                <p class="project-location"><i class="fas fa-map-marker-alt"></i> 서울시 강남구 역삼동</p>
+                                <div class="project-progress-info">
+                                    <div class="d-flex justify-between mb-10">
+                                        <span>공정률</span>
+                                        <span class="progress-value">78%</span>
+                                    </div>
+                                    <div class="progress" style="height: 12px;">
+                                        <div class="progress-bar" style="width: 78%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <div class="meta-item">
+                                        <span class="meta-label">준공예정</span>
+                                        <span class="meta-value">2024.06.30</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span class="meta-label">분양률</span>
+                                        <span class="meta-value text-success">92%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 프로젝트 카드 2 -->
+                            <div class="project-card">
+                                <div class="project-card-header">
+                                    <div class="project-status-badge progress">진행중</div>
+                                    <span class="project-date">착공: 2023.06.01</span>
+                                </div>
+                                <h4 class="project-name">판교 지식산업센터</h4>
+                                <p class="project-location"><i class="fas fa-map-marker-alt"></i> 경기도 성남시 분당구</p>
+                                <div class="project-progress-info">
+                                    <div class="d-flex justify-between mb-10">
+                                        <span>공정률</span>
+                                        <span class="progress-value warning">45%</span>
+                                    </div>
+                                    <div class="progress" style="height: 12px;">
+                                        <div class="progress-bar warning" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <div class="meta-item">
+                                        <span class="meta-label">준공예정</span>
+                                        <span class="meta-value">2025.03.31</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span class="meta-label">분양률</span>
+                                        <span class="meta-value text-primary">68%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 프로젝트 카드 3 -->
+                            <div class="project-card">
+                                <div class="project-card-header">
+                                    <div class="project-status-badge complete">완료임박</div>
+                                    <span class="project-date">착공: 2022.09.01</span>
+                                </div>
+                                <h4 class="project-name">송도 주상복합</h4>
+                                <p class="project-location"><i class="fas fa-map-marker-alt"></i> 인천시 연수구 송도동</p>
+                                <div class="project-progress-info">
+                                    <div class="d-flex justify-between mb-10">
+                                        <span>공정률</span>
+                                        <span class="progress-value success">92%</span>
+                                    </div>
+                                    <div class="progress" style="height: 12px;">
+                                        <div class="progress-bar success" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <div class="meta-item">
+                                        <span class="meta-label">준공예정</span>
+                                        <span class="meta-value">2024.02.28</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span class="meta-label">분양률</span>
+                                        <span class="meta-value text-success">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 프로젝트 카드 4 -->
+                            <div class="project-card">
+                                <div class="project-card-header">
+                                    <div class="project-status-badge progress">진행중</div>
+                                    <span class="project-date">착공: 2023.11.15</span>
+                                </div>
+                                <h4 class="project-name">일산 상업시설</h4>
+                                <p class="project-location"><i class="fas fa-map-marker-alt"></i> 경기도 고양시 일산서구</p>
+                                <div class="project-progress-info">
+                                    <div class="d-flex justify-between mb-10">
+                                        <span>공정률</span>
+                                        <span class="progress-value">23%</span>
+                                    </div>
+                                    <div class="progress" style="height: 12px;">
+                                        <div class="progress-bar" style="width: 23%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <div class="meta-item">
+                                        <span class="meta-label">준공예정</span>
+                                        <span class="meta-value">2025.08.31</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <span class="meta-label">분양률</span>
+                                        <span class="meta-value text-warning">35%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 공정 일정표 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-calendar-alt"></i> 공정 일정표</h3>
+                        <div class="d-flex gap-10">
+                            <select class="form-control form-select" style="width: 200px;">
+                                <option>강남 오피스텔 신축</option>
+                                <option>판교 지식산업센터</option>
+                                <option>송도 주상복합</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="gantt-chart">
+                            <div class="gantt-row header">
+                                <div class="gantt-task-name">공종</div>
+                                <div class="gantt-months">
+                                    <span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span>
+                                </div>
+                            </div>
+                            <div class="gantt-row">
+                                <div class="gantt-task-name">토공사</div>
+                                <div class="gantt-bar-container">
+                                    <div class="gantt-bar complete" style="left: 0%; width: 25%;"></div>
+                                </div>
+                            </div>
+                            <div class="gantt-row">
+                                <div class="gantt-task-name">골조공사</div>
+                                <div class="gantt-bar-container">
+                                    <div class="gantt-bar complete" style="left: 15%; width: 40%;"></div>
+                                </div>
+                            </div>
+                            <div class="gantt-row">
+                                <div class="gantt-task-name">마감공사</div>
+                                <div class="gantt-bar-container">
+                                    <div class="gantt-bar progress" style="left: 45%; width: 35%;"></div>
+                                </div>
+                            </div>
+                            <div class="gantt-row">
+                                <div class="gantt-task-name">설비공사</div>
+                                <div class="gantt-bar-container">
+                                    <div class="gantt-bar progress" style="left: 50%; width: 30%;"></div>
+                                </div>
+                            </div>
+                            <div class="gantt-row">
+                                <div class="gantt-task-name">전기공사</div>
+                                <div class="gantt-bar-container">
+                                    <div class="gantt-bar pending" style="left: 60%; width: 30%;"></div>
+                                </div>
+                            </div>
+                            <div class="gantt-row">
+                                <div class="gantt-task-name">준공검사</div>
+                                <div class="gantt-bar-container">
+                                    <div class="gantt-bar pending" style="left: 85%; width: 15%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-legend">
+                            <span><i class="legend-dot complete"></i> 완료</span>
+                            <span><i class="legend-dot progress"></i> 진행중</span>
+                            <span><i class="legend-dot pending"></i> 예정</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>© 2024 신한자산신탁 주식회사. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <style>
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .project-status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-status-badge.progress {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .project-status-badge.complete {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .project-status-badge.pending {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .project-date {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .project-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-800);
+        }
+
+        .project-location {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .project-progress-info {
+            margin-bottom: 20px;
+        }
+
+        .progress-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progress-value.warning {
+            color: var(--warning);
+        }
+
+        .progress-value.success {
+            color: var(--success);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-300);
+        }
+
+        .meta-item {
+            flex: 1;
+        }
+
+        .meta-label {
+            display: block;
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            font-weight: 600;
+        }
+
+        /* Gantt Chart */
+        .gantt-chart {
+            overflow-x: auto;
+        }
+
+        .gantt-row {
+            display: flex;
+            border-bottom: 1px solid var(--gray-200);
+            min-height: 40px;
+            align-items: center;
+        }
+
+        .gantt-row.header {
+            background: var(--gray-100);
+            font-weight: 600;
+        }
+
+        .gantt-task-name {
+            width: 120px;
+            padding: 10px 15px;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .gantt-months {
+            flex: 1;
+            display: flex;
+        }
+
+        .gantt-months span {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            border-left: 1px solid var(--gray-200);
+        }
+
+        .gantt-bar-container {
+            flex: 1;
+            position: relative;
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gray-100),
+                var(--gray-100) calc(16.666% - 1px),
+                var(--gray-200) calc(16.666% - 1px),
+                var(--gray-200) 16.666%
+            );
+        }
+
+        .gantt-bar {
+            position: absolute;
+            height: 100%;
+            border-radius: 4px;
+            top: 0;
+        }
+
+        .gantt-bar.complete {
+            background: var(--success);
+        }
+
+        .gantt-bar.progress {
+            background: var(--primary);
+        }
+
+        .gantt-bar.pending {
+            background: var(--gray-400);
+        }
+
+        .gantt-legend {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: flex-end;
+        }
+
+        .gantt-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .legend-dot.complete {
+            background: var(--success);
+        }
+
+        .legend-dot.progress {
+            background: var(--primary);
+        }
+
+        .legend-dot.pending {
+            background: var(--gray-400);
+        }
+
+        @media (max-width: 1200px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
