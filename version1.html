@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신한자산신탁 비대면 서비스</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'OneShinhan';
+            src: url('https://cdn.jsdelivr.net/gh/pstudio411/fonts@latest/OneShinhanLight.woff2') format('woff2');
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: 'OneShinhan';
+            src: url('https://cdn.jsdelivr.net/gh/pstudio411/fonts@latest/OneShinhanMedium.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'OneShinhan';
+            src: url('https://cdn.jsdelivr.net/gh/pstudio411/fonts@latest/OneShinhanBold.woff2') format('woff2');
+            font-weight: 700;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'OneShinhan', 'Malgun Gothic', sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Header */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: #f8f9fa;
+            padding: 8px 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .header-top a:hover { color: #0046a8; }
+
+        .header-main {
+            padding: 16px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img { height: 40px; }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0046a8;
+        }
+
+        .gnb {
+            display: flex;
+            gap: 48px;
+        }
+
+        .gnb-item {
+            font-size: 17px;
+            font-weight: 500;
+            color: #333;
+            padding: 10px 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gnb-item:hover { color: #0046a8; }
+
+        .gnb-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #0046a8;
+            transition: width 0.3s;
+        }
+
+        .gnb-item:hover::after { width: 100%; }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-login {
+            padding: 10px 24px;
+            background: #0046a8;
+            color: #fff;
+            border-radius: 24px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #003580;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0046a8 0%, #0066cc 50%, #00a0e0 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="40" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="80" r="30" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: #fff;
+            max-width: 550px;
+        }
+
+        .hero-text h1 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-hero {
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-hero.primary {
+            background: #fff;
+            color: #0046a8;
+        }
+
+        .btn-hero.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-hero.secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-hero.secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+
+        /* SOL Character */
+        .hero-character {
+            position: relative;
+        }
+
+        .sol-character {
+            width: 320px;
+            height: 320px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .sol-face {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(180deg, #fff 0%, #f0f7ff 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .sol-ears {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 60px;
+        }
+
+        .sol-ear {
+            width: 40px;
+            height: 70px;
+            background: linear-gradient(180deg, #fff 0%, #f0f7ff 100%);
+            border-radius: 20px 20px 50% 50%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .sol-ear::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background: #ffb6c1;
+            border-radius: 10px 10px 50% 50%;
+            top: 10px;
+            left: 10px;
+        }
+
+        .sol-eyes {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+        }
+
+        .sol-eye {
+            width: 24px;
+            height: 30px;
+            background: #333;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .sol-eye::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            top: 6px;
+            right: 4px;
+        }
+
+        .sol-cheeks {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 100px;
+        }
+
+        .sol-cheek {
+            width: 30px;
+            height: 16px;
+            background: #ffb6c1;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .sol-mouth {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 15px;
+            border-bottom: 4px solid #333;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .sol-speech {
+            position: absolute;
+            top: -20px;
+            right: -100px;
+            background: #fff;
+            padding: 16px 24px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #0046a8;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .sol-speech::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            bottom: 20px;
+            border: 10px solid transparent;
+            border-right-color: #fff;
+        }
+
+        /* Quick Menu */
+        .quick-menu {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .quick-item {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 20px;
+            padding: 40px 24px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .quick-item:hover {
+            border-color: #0046a8;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,70,168,0.15);
+        }
+
+        .quick-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #e8f0fe 0%, #d4e5ff 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #0046a8;
+            transition: all 0.3s;
+        }
+
+        .quick-item:hover .quick-icon {
+            background: linear-gradient(135deg, #0046a8 0%, #0066cc 100%);
+            color: #fff;
+        }
+
+        .quick-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .quick-desc {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Service Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            gap: 30px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #0046a8 0%, #00a0e0 100%);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .service-content p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .service-link {
+            color: #0046a8;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-link:hover { text-decoration: underline; }
+
+        /* AI Chatbot - Prominent Design */
+        .ai-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0046a8 0%, #0066cc 100%);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .ai-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .ai-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .ai-desc {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ai-bot-preview {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255,255,255,0.15);
+            padding: 20px 40px;
+            border-radius: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .ai-bot-avatar {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-bot-avatar i {
+            font-size: 28px;
+            color: #0046a8;
+        }
+
+        .ai-bot-text {
+            text-align: left;
+        }
+
+        .ai-bot-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .ai-bot-status {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .ai-start-btn {
+            background: #fff;
+            color: #0046a8;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: all 0.3s;
+        }
+
+        .ai-start-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 60px 0 30px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .footer-logo img {
+            height: 36px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover { color: #fff; }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .footer-info p { margin-bottom: 6px; }
+
+        /* Floating Chatbot Button */
+        .chatbot-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-btn {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #0046a8 0%, #00a0e0 100%);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(0,70,168,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-btn img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .chatbot-btn::before {
+            content: 'AI 상담';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .chatbot-btn:hover::before {
+            opacity: 1;
+        }
+
+        .chatbot-pulse {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #0046a8;
+            animation: chatbot-pulse 2s infinite;
+        }
+
+        @keyframes chatbot-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* SOL Mini for button */
+        .sol-mini {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .sol-mini-ears {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .sol-mini-ear {
+            width: 12px;
+            height: 20px;
+            background: #fff;
+            border-radius: 6px 6px 50% 50%;
+        }
+
+        .sol-mini-face {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .sol-mini-eye {
+            width: 6px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+        }
+
+        .sol-mini-mouth {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 5px;
+            border-bottom: 2px solid #333;
+            border-radius: 0 0 50% 50%;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-character { margin-top: 40px; }
+            .quick-grid { grid-template-columns: repeat(2, 1fr); }
+            .service-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .gnb { display: none; }
+            .hero-text h1 { font-size: 32px; }
+            .quick-grid { grid-template-columns: 1fr; }
+            .ai-title { font-size: 28px; }
+            .ai-bot-preview { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">고객센터</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="images/ci-1.png" alt="신한자산신탁">
+                    <span class="logo-text">신한자산신탁</span>
+                </a>
+                <nav class="gnb">
+                    <a href="#" class="gnb-item">사업현황</a>
+                    <a href="#" class="gnb-item">자금관리</a>
+                    <a href="#" class="gnb-item">서류발급</a>
+                    <a href="#" class="gnb-item">분양안내</a>
+                    <a href="#" class="gnb-item">고객지원</a>
+                </nav>
+                <div class="header-right">
+                    <a href="#" class="btn-login">로그인</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>신한자산신탁<br>비대면 고객 서비스</h1>
+                    <p>언제 어디서나 편리하게 이용하세요.<br>사업현황 조회부터 자금이체, 서류발급까지<br>모든 서비스를 온라인으로 제공합니다.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-hero primary">
+                            <i class="fas fa-user"></i> 로그인하기
+                        </a>
+                        <a href="#" class="btn-hero secondary">
+                            <i class="fas fa-info-circle"></i> 서비스 안내
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-character">
+                    <div class="sol-character">
+                        <div class="sol-face">
+                            <div class="sol-ears">
+                                <div class="sol-ear"></div>
+                                <div class="sol-ear"></div>
+                            </div>
+                            <div class="sol-eyes">
+                                <div class="sol-eye"></div>
+                                <div class="sol-eye"></div>
+                            </div>
+                            <div class="sol-cheeks">
+                                <div class="sol-cheek"></div>
+                                <div class="sol-cheek"></div>
+                            </div>
+                            <div class="sol-mouth"></div>
+                        </div>
+                    </div>
+                    <div class="sol-speech">안녕하세요! 무엇을 도와드릴까요? 😊</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Menu -->
+    <section class="quick-menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>주요 서비스</h2>
+                <p>자주 이용하는 서비스를 빠르게 이용하세요</p>
+            </div>
+            <div class="quick-grid">
+                <a href="pages/dashboard-business.html" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="quick-title">사업수지 현황</div>
+                    <div class="quick-desc">수입/지출 현황 조회</div>
+                </a>
+                <a href="pages/transfer-request.html" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="quick-title">자금이체 신청</div>
+                    <div class="quick-desc">온라인 이체 요청</div>
+                </a>
+                <a href="pages/payment-history.html" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-receipt"></i></div>
+                    <div class="quick-title">납입내역 조회</div>
+                    <div class="quick-desc">분양금 납입 확인</div>
+                </a>
+                <a href="pages/land-consent.html" class="quick-item">
+                    <div class="quick-icon"><i class="fas fa-file-signature"></i></div>
+                    <div class="quick-title">서류 발급</div>
+                    <div class="quick-desc">증명서/승낙서 발급</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>편리한 비대면 서비스</h2>
+                <p>오프라인 방문 없이 모든 업무를 처리하세요</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <div class="service-content">
+                        <h3>사업현황 조회</h3>
+                        <p>사업수지 현황, 공정률, 제한권리현황 등 사업 관련 모든 정보를 실시간으로 확인하세요.</p>
+                        <a href="#" class="service-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="service-content">
+                        <h3>자금관리</h3>
+                        <p>자금이체 신청부터 이력조회까지 편리한 온라인 자금관리 서비스를 이용하세요.</p>
+                        <a href="#" class="service-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="service-content">
+                        <h3>서류 발급</h3>
+                        <p>토지사용승낙서, 이체증명서 등 각종 서류를 온라인으로 발급받으세요.</p>
+                        <a href="#" class="service-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <div class="service-content">
+                        <h3>수분양자 서비스</h3>
+                        <p>분양금 납입내역 조회, 이체증명서 발급 등 수분양자를 위한 서비스입니다.</p>
+                        <a href="#" class="service-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="ai-section">
+        <div class="container">
+            <div class="ai-content">
+                <div class="ai-badge"><i class="fas fa-robot"></i> AI 고객센터</div>
+                <h2 class="ai-title">24시간 AI 상담 서비스</h2>
+                <p class="ai-desc">궁금한 점이 있으신가요?<br>신한자산신탁 AI 상담사가 365일 24시간 도와드립니다.</p>
+                <div class="ai-bot-preview">
+                    <div class="ai-bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="ai-bot-text">
+                        <div class="ai-bot-name">SOL 상담사</div>
+                        <div class="ai-bot-status"><i class="fas fa-circle" style="color: #4ade80; font-size: 8px;"></i> 온라인 대기중</div>
+                    </div>
+                    <button class="ai-start-btn" onclick="openChatbot()">
+                        <i class="fas fa-comment-dots"></i> 상담 시작하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/ci-1.png" alt="">
+                    신한자산신탁
+                </div>
+                <div class="footer-links">
+                    <a href="#">회사소개</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">고객센터</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>신한자산신탁 주식회사 | 대표이사: 홍길동 | 사업자등록번호: 110-81-12345</p>
+                    <p>서울특별시 중구 세종대로 9길 20 | 고객센터: 02-1588-1234</p>
+                </div>
+                <p>© 2024 Shinhan Asset Trust. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot -->
+    <div class="chatbot-float">
+        <button class="chatbot-btn" onclick="openChatbot()">
+            <span class="chatbot-pulse"></span>
+            <div class="sol-mini">
+                <div class="sol-mini-ears">
+                    <div class="sol-mini-ear"></div>
+                    <div class="sol-mini-ear"></div>
+                </div>
+                <div class="sol-mini-face">
+                    <div class="sol-mini-eye"></div>
+                    <div class="sol-mini-eye"></div>
+                </div>
+                <div class="sol-mini-mouth"></div>
+            </div>
+        </button>
+    </div>
+
+    <script>
+        function openChatbot() {
+            alert('AI 상담사 SOL이 연결됩니다.\n\n무엇을 도와드릴까요?');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신한자산신탁 비대면 업무시스템</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="images/ci-1.png" alt="신한자산신탁">
+                    <span>신한자산신탁</span>
+                </div>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="user-name">홍길동 님</div>
+                        <div class="user-role">위탁사 관리자</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">메인</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>대시보드</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">사업관리</div>
+                    <div class="nav-item">
+                        <a href="pages/dashboard-business.html" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>사업수지 현황</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="pages/dashboard-progress.html" class="nav-link">
+                            <i class="fas fa-tasks"></i>
+                            <span>사업현황 (공정률)</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="pages/restricted-rights.html" class="nav-link">
+                            <i class="fas fa-lock"></i>
+                            <span>제한권리현황</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">자금관리</div>
+                    <div class="nav-item">
+                        <a href="pages/transfer-request.html" class="nav-link">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>자금이체 신청</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="pages/transfer-history.html" class="nav-link">
+                            <i class="fas fa-history"></i>
+                            <span>자금이체 이력</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">서류관리</div>
+                    <div class="nav-item">
+                        <a href="pages/land-consent.html" class="nav-link">
+                            <i class="fas fa-file-signature"></i>
+                            <span>토지사용승낙서</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">수분양자</div>
+                    <div class="nav-item">
+                        <a href="pages/payment-history.html" class="nav-link">
+                            <i class="fas fa-receipt"></i>
+                            <span>분양금 납입내역</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">기타</div>
+                    <div class="nav-item">
+                        <a href="pages/notice.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>공지사항</span>
+                            <span class="nav-badge">3</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">대시보드</h1>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn" title="알림">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </button>
+                    <button class="header-btn" title="설정">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="header-btn" title="로그아웃">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- 통계 카드 -->
+                <div class="stats-grid">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">진행중인 사업</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-won-sign"></i>
+                        </div>
+                        <div class="stat-value">1,250억</div>
+                        <div class="stat-label">총 신탁자산</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">승인 대기</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">이번달 처리건수</div>
+                        <div class="stat-change up">
+                            <i class="fas fa-arrow-up"></i> 12% 증가
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 빠른 메뉴 -->
+                <div class="card mb-30">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-th-large"></i>
+                            빠른 메뉴
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-menu">
+                            <a href="pages/transfer-request.html" class="quick-menu-item">
+                                <div class="quick-menu-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <div class="quick-menu-title">자금이체 신청</div>
+                                <div class="quick-menu-desc">신규 이체 요청</div>
+                            </a>
+                            <a href="pages/dashboard-business.html" class="quick-menu-item">
+                                <div class="quick-menu-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="quick-menu-title">사업수지 현황</div>
+                                <div class="quick-menu-desc">수입/지출 현황</div>
+                            </a>
+                            <a href="pages/land-consent.html" class="quick-menu-item">
+                                <div class="quick-menu-icon">
+                                    <i class="fas fa-file-signature"></i>
+                                </div>
+                                <div class="quick-menu-title">토지사용승낙서</div>
+                                <div class="quick-menu-desc">승낙서 작성</div>
+                            </a>
+                            <a href="pages/payment-history.html" class="quick-menu-item">
+                                <div class="quick-menu-icon">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <div class="quick-menu-title">납입내역 확인</div>
+                                <div class="quick-menu-desc">이체증명서 발급</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- 사업현황 -->
+                    <div class="col col-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-chart-bar"></i>
+                                    사업별 공정률
+                                </h3>
+                                <a href="pages/dashboard-progress.html" class="btn btn-sm btn-outline">전체보기</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="project-progress-list">
+                                    <div class="project-item mb-20">
+                                        <div class="d-flex justify-between mb-10">
+                                            <span class="project-name">강남 오피스텔 신축</span>
+                                            <span class="project-percent">78%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-item mb-20">
+                                        <div class="d-flex justify-between mb-10">
+                                            <span class="project-name">판교 지식산업센터</span>
+                                            <span class="project-percent">45%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar warning" style="width: 45%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-item mb-20">
+                                        <div class="d-flex justify-between mb-10">
+                                            <span class="project-name">송도 주상복합</span>
+                                            <span class="project-percent">92%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar success" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-item">
+                                        <div class="d-flex justify-between mb-10">
+                                            <span class="project-name">일산 상업시설</span>
+                                            <span class="project-percent">23%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 23%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 최근 공지사항 -->
+                    <div class="col col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-bullhorn"></i>
+                                    공지사항
+                                </h3>
+                                <a href="pages/notice.html" class="btn btn-sm btn-outline">더보기</a>
+                            </div>
+                            <div class="card-body">
+                                <ul class="notice-list">
+                                    <li class="notice-item">
+                                        <a href="#">
+                                            <span class="notice-badge new">NEW</span>
+                                            <span class="notice-title">2024년 1분기 정기점검 안내</span>
+                                            <span class="notice-date">2024.01.15</span>
+                                        </a>
+                                    </li>
+                                    <li class="notice-item">
+                                        <a href="#">
+                                            <span class="notice-title">시스템 이용약관 개정 안내</span>
+                                            <span class="notice-date">2024.01.10</span>
+                                        </a>
+                                    </li>
+                                    <li class="notice-item">
+                                        <a href="#">
+                                            <span class="notice-title">신규 기능 업데이트 안내</span>
+                                            <span class="notice-date">2024.01.05</span>
+                                        </a>
+                                    </li>
+                                    <li class="notice-item">
+                                        <a href="#">
+                                            <span class="notice-title">연말정산 서류 제출 안내</span>
+                                            <span class="notice-date">2023.12.28</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 최근 이체 내역 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-exchange-alt"></i>
+                            최근 자금이체 내역
+                        </h3>
+                        <a href="pages/transfer-history.html" class="btn btn-sm btn-outline">전체보기</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>신청일</th>
+                                        <th>사업명</th>
+                                        <th>이체구분</th>
+                                        <th>수취인</th>
+                                        <th>금액</th>
+                                        <th>상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2024.01.15</td>
+                                        <td>강남 오피스텔 신축</td>
+                                        <td>공사비</td>
+                                        <td>(주)대한건설</td>
+                                        <td class="text-right"><strong>1,500,000,000</strong>원</td>
+                                        <td><span class="status status-success">완료</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024.01.14</td>
+                                        <td>판교 지식산업센터</td>
+                                        <td>설계비</td>
+                                        <td>(주)삼성설계</td>
+                                        <td class="text-right"><strong>250,000,000</strong>원</td>
+                                        <td><span class="status status-warning">승인대기</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024.01.13</td>
+                                        <td>송도 주상복합</td>
+                                        <td>분담금</td>
+                                        <td>인천시청</td>
+                                        <td class="text-right"><strong>80,000,000</strong>원</td>
+                                        <td><span class="status status-info">처리중</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024.01.12</td>
+                                        <td>일산 상업시설</td>
+                                        <td>인허가비</td>
+                                        <td>고양시청</td>
+                                        <td class="text-right"><strong>15,000,000</strong>원</td>
+                                        <td><span class="status status-success">완료</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2024 신한자산신탁 주식회사. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- AI 챗봇 -->
+    <div class="chatbot-container">
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    AI 업무 도우미
+                </div>
+                <button onclick="toggleChatbot()" style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-bubble">
+                        안녕하세요! 신한자산신탁 AI 업무 도우미입니다.<br><br>
+                        무엇을 도와드릴까요?<br><br>
+                        <strong>자주 묻는 질문:</strong><br>
+                        • 자금이체 신청 방법<br>
+                        • 사업수지 확인 방법<br>
+                        • 토지사용승낙서 작성
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="질문을 입력하세요..." onkeypress="handleChatKeypress(event)">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chatbot-btn" onclick="toggleChatbot()" title="AI 도우미">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <style>
+        /* 추가 스타일 */
+        .notice-list {
+            list-style: none;
+        }
+
+        .notice-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-item a {
+            display: block;
+            padding: 12px 0;
+            transition: all 0.2s;
+        }
+
+        .notice-item a:hover {
+            color: var(--primary);
+        }
+
+        .notice-badge {
+            display: inline-block;
+            background: var(--danger);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+
+        .notice-title {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .notice-date {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .project-name {
+            font-weight: 500;
+        }
+
+        .project-percent {
+            font-weight: 700;
+            color: var(--primary);
+        }
+    </style>
+
+    <script>
+        function toggleChatbot() {
+            const window = document.getElementById('chatbotWindow');
+            window.classList.toggle('active');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // 사용자 메시지 추가
+            addMessage(message, 'user');
+            input.value = '';
+
+            // AI 응답 (시뮬레이션)
+            setTimeout(() => {
+                let response = '';
+                if (message.includes('이체') || message.includes('자금')) {
+                    response = '자금이체 신청은 좌측 메뉴의 "자금관리 > 자금이체 신청"에서 진행하실 수 있습니다.\n\n필요 서류:\n• 이체신청서\n• 세금계산서 (해당시)\n• 기성검사확인서 (공사비)';
+                } else if (message.includes('사업수지') || message.includes('수지')) {
+                    response = '사업수지 현황은 "사업관리 > 사업수지 현황" 메뉴에서 확인하실 수 있습니다.\n\n사업별 수입/지출 내역과 잔액을 실시간으로 조회할 수 있습니다.';
+                } else if (message.includes('토지') || message.includes('승낙서')) {
+                    response = '토지사용승낙서는 "서류관리 > 토지사용승낙서" 메뉴에서 작성하실 수 있습니다.\n\n작성 후 전자서명을 통해 제출됩니다.';
+                } else {
+                    response = '죄송합니다. 해당 질문에 대한 답변을 찾지 못했습니다.\n\n다음 키워드로 질문해 보세요:\n• 자금이체\n• 사업수지\n• 토지사용승낙서\n• 분양금 납입\n• 공정률';
+                }
+                addMessage(response, 'bot');
+            }, 800);
+        }
+
+        function addMessage(text, type) {
+            const messages = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `chat-message ${type}`;
+            div.innerHTML = `
+                <div class="chat-avatar"><i class="fas fa-${type === 'bot' ? 'robot' : 'user'}"></i></div>
+                <div class="chat-bubble">${text.replace(/\n/g, '<br>')}</div>
+            `;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function handleChatKeypress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+    </script>
+</body>
+</html>
